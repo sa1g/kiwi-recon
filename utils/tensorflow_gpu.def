@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/tensorflow:23.03-tf2-py3
+
+%post
+pip install cython==3.0.5 \
+  h5py==3.9.0 \
+  imgaug==0.4.0 \
+  ipython==7.34.0 \
+  ipython-genutils==0.2.0 \
+  ipython-sql==0.5.0 \
+  keras==2.14.0 \
+  matplotlib==3.7.1 \
+  numpy \
+  opencv-contrib-python==4.8.0.76 \
+  opencv-python==4.8.0.76 \
+  pillow==9.4.0 \
+  scikit-image==0.19.3 \
+  scipy==1.11.3
+

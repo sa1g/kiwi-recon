@@ -1,0 +1,33 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+    apt-get upgrade -y && \ 
+    apt-get install -y wget
+
+
+RUN wget -q https://go.dev/dl/go1.21.6.linux-amd64.tar.gz && \ 
+    rm -rf /usr/local/go && \
+    tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz && \
+    rm go1.21.6.linux-amd64.tar.gz
+
+ENV PATH=$PATH:/usr/local/go/bin
+
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+
+RUN apt-get install -y \
+    build-essential \
+    libssl-dev \
+    uuid-dev \
+    libgpgme11-dev \
+    squashfs-tools \
+    libseccomp-dev \
+    pkg-config 
+
+ENV VERSION=4.0.3
+
+RUN wget -q https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce_${VERSION}-focal_amd64.deb && \
+    apt install ./singularity-ce_${VERSION}-focal_amd64.deb -y && \
+    rm singularity-ce_${VERSION}-focal_amd64.deb
+
+RUN apt-get autoremove -y && \
+    apt-get clean
