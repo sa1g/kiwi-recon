@@ -1,6 +1,6 @@
 # What is this project about
 This project, developed for my university couse of `Signal, Image and Video` focuses on verifying the possiblity to estimate the size of kiwi-fruits from 2D images taken directly on the field, using Machine Learning as little as possible.  
-The application of this software could be beneficial for farmers that want to measure the performances of their land, this is just the prototype of what it could be possible to do, such as visualize the production quality identifying (le fila di alberi da frutto) the lines of plants, orchards and, if the software is used by many farmers it could be useful to improve quality, production quantity and research about those.
+The application of this software could be beneficial for farmers that want to measure the performances of their land, this is just the prototype of what it could be possible to do, such as visualize the production quality identifying plant lines, orchards and, if the software is used by many farmers it could be useful to improve quality, production quantity and research about those.
 
 # How it works
 1. Camera distortion is corrected
